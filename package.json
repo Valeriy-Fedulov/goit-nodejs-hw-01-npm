@@ -1,0 +1,29 @@
+{
+  "name": "goit-nodejs-hw-01-npm",
+  "version": "1.0.0",
+  "description": "NPM",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app",
+    "start:dev": "nodemon app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Valeriy-Fedulov/goit-nodejs-hw-01-npm.git"
+  },
+  "keywords": [],
+  "author": "Valeriy <valerafm.vofm@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Valeriy-Fedulov/goit-nodejs-hw-01-npm/issues"
+  },
+  "homepage": "https://github.com/Valeriy-Fedulov/goit-nodejs-hw-01-npm#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "uuid": "^8.3.2"
+  }
+}
