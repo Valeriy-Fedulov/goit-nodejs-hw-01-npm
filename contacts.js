@@ -1,4 +1,3 @@
-import { constants } from "buffer";
 import fs from "fs/promises";
 import path from "path";
 import { v4 } from "uuid";
@@ -21,12 +20,14 @@ const getContactById = async (contactId) => {
 };
 
 const removeContact = async (contactId) => {
-  const contacts = listContacts();
-  const idx = constants.findIndex((item) => item.id === contactId);
+  const contacts = await listContacts();
+  const idx = contacts.findIndex((item) => item.id === contactId);
   if (idx === -1) {
     return null;
   }
-  const removeContById = constants.splice(idx, 1);
+  const [removeCont] = contacts.splice(idx, 1);
+  await fs.writeFile(contactsPath, JSON.stringify(contacts));
+  return removeCont;
 };
 
 const addContact = async (data) => {

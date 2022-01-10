@@ -16,8 +16,8 @@ const invokeAction = async ({ action, id, data }) => {
       break;
 
     case "removeContact":
-      const removeContById = await contactsOperations.removeContact(id);
-      console.log(removeContById);
+      const removeCont = await contactsOperations.removeContact(id);
+      console.log(removeCont);
       break;
 
     case "addContact":
@@ -30,20 +30,14 @@ const invokeAction = async ({ action, id, data }) => {
   }
 };
 
-invokeAction({ action: "listContacts" });
-invokeAction({ action: "getContactById", id: "5" });
+// invokeAction({ action: "listContacts" });
+// invokeAction({ action: "getContactById", id: "3" });
 
-const newData = {
-  name: "New Name",
-  email: "name@mail.com",
-  phone: "(123) 456-7890",
-};
+// const newData = {
+//   name: "New Name",
+//   email: "name@mail.com",
+//   phone: "(123) 456-7890",
+// };
 
 // invokeAction({ action: "addContact", data: newData });
-invokeAction({ action: "removeContact", id: "5" });
-
-// fs.readFile("db/contacts.json", "utf-8")
-//   .then((data) => {
-//     console.log(data);
-//   })
-//   .catch((error) => console.log(error.message));
+// invokeAction({ action: "removeContact", id: "5" });
